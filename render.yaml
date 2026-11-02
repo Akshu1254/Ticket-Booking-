@@ -6,15 +6,9 @@ services:
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
-    disk:
-      name: ticketbooker-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: 20
-      - key: DATABASE_PATH
-        value: /var/data/ticketbooker.sqlite
       - key: RAZORPAY_KEY_ID
         sync: false
       - key: RAZORPAY_KEY_SECRET
