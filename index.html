@@ -3,52 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TicketBooker - Book Movie Tickets</title>
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="Discover movies and book your seats with TicketBooker.">
+  <title>TicketBooker - Movie Tickets</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
+  <div class="top-strip">YOUR MOVIE NIGHT STARTS HERE <span>•</span> EASY BOOKING <span>•</span> GREAT EXPERIENCES</div>
   <header class="navbar">
-    <a href="index.html" class="logo">🎟️ TicketBooker</a>
+    <a href="index.html" class="logo"><span class="logo-mark">T</span> TicketBooker</a>
+    <div class="nav-search">
+      <span>⌕</span>
+      <input type="text" id="searchInput" placeholder="Search for movies, genres..." aria-label="Search movies">
+    </div>
     <nav>
-      <a href="index.html">Home</a>
+      <button class="city-button" type="button">⌖ Select City</button>
       <a href="#" id="myBookingsLink">My Bookings</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Book Tickets for Your Favourite Movies</h1>
-    <p>Choose your seats, complete the demo payment, and get your ticket.</p>
-    <div class="filters">
-      <input type="text" id="searchInput" placeholder="Search movies...">
-      <select id="genreFilter">
-        <option value="all">All Genres</option>
-      </select>
-      <select id="languageFilter">
-        <option value="all">All Languages</option>
-        <option value="Hindi">Hindi</option>
-        <option value="Punjabi">Punjabi</option>
-        <option value="English">English</option>
-      </select>
-    </div>
-  </section>
+  <main>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">THE BIG SCREEN EXPERIENCE</span>
+        <h1>Lights. Camera.<br><em>Your Movie.</em></h1>
+        <p>Find the latest hits, pick your perfect seats and make every movie night memorable.</p>
+        <a class="hero-cta" href="#now-showing">Explore Movies <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Featured movie night artwork">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-ticket">🎟️</div>
+        <div class="hero-clapper">▶</div>
+        <span class="floating-tag tag-top">YOUR FRONT ROW</span>
+        <span class="floating-tag tag-bottom">MOVIE MAGIC</span>
+      </div>
+    </section>
 
-  <main class="container">
-    <h2>Featured Movies</h2>
-    <div id="movieList" class="movie-grid"></div>
-    <p id="noResult" class="hidden">No movies found. Try another search. 😕</p>
+    <section class="quick-benefits">
+      <div><span>⚡</span><b>Quick booking</b><small>Book in a few clicks</small></div>
+      <div><span>💺</span><b>Choose your seat</b><small>Your seat, your choice</small></div>
+      <div><span>🎬</span><b>Movies for everyone</b><small>Hindi • Punjabi • English</small></div>
+    </section>
+
+    <section class="container movie-section" id="now-showing">
+      <div class="section-heading">
+        <div><span class="eyebrow">NOW PLAYING</span><h2>Movies you'll love</h2><p>Pick a film and book your seats.</p></div>
+        <div class="filter-controls">
+          <select id="genreFilter" aria-label="Filter by genre"><option value="all">All Genres</option></select>
+          <select id="languageFilter" aria-label="Filter by language">
+            <option value="all">All Languages</option><option value="Hindi">Hindi</option><option value="Punjabi">Punjabi</option><option value="English">English</option>
+          </select>
+        </div>
+      </div>
+      <div id="movieList" class="movie-grid"></div>
+      <p id="noResult" class="hidden">No movies found. Try another search.</p>
+    </section>
+
+    <section class="bottom-banner">
+      <div><span class="eyebrow">PLAN YOUR NEXT OUTING</span><h2>Good movies. Great memories.</h2><p>Your next favourite story is just one booking away.</p></div>
+      <a href="#now-showing" class="hero-cta">Book a Ticket <span>→</span></a>
+    </section>
   </main>
 
-  <!-- My Bookings popup -->
   <div id="bookingsModal" class="modal hidden">
     <div class="modal-box">
-      <button class="close-btn" id="closeModal">&times;</button>
+      <button class="close-btn" id="closeModal" aria-label="Close">&times;</button>
       <h2>My Bookings</h2>
       <div id="bookingsList"></div>
     </div>
   </div>
-
-  <footer>TicketBooker © 2026 | Movie booking demo</footer>
-
+  <footer><strong>TicketBooker</strong><span>Movie booking demo · © 2026</span><span>Made for movie lovers</span></footer>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
