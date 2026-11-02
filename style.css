@@ -447,3 +447,12 @@ footer strong{color:#ff7188}
  .payment-card-top{align-items:flex-start;flex-direction:column}
  .qr-frame{width:min(100%,290px)}
 }
+
+/* Razorpay secure checkout */
+.razorpay-card{display:flex;flex-direction:column;align-items:center;min-height:100%}
+.gateway-icon{display:grid;place-items:center;width:76px;height:76px;margin:28px auto 10px;border-radius:24px;background:linear-gradient(135deg,#f04462,#a51d58);font-size:34px;font-weight:900;box-shadow:0 12px 30px #f0446230}
+.gateway-benefits{list-style:none;text-align:left;width:100%;max-width:330px;margin:5px auto 22px;color:#d1d5de;font-size:12px;line-height:2}
+.gateway-benefits li:before{content:"✓";color:#43d49a;font-weight:900;margin-right:10px}
+.payment-message{min-height:24px;margin-top:12px;font-size:12px;color:#d1d5de;line-height:1.5}
+.payment-message.is-error{color:#ff929d}.payment-message.is-success{color:#58d9a4}
+.gateway-footnote{max-width:350px;margin-top:16px;color:#9298a6;font-size:10px;line-height:1.6}
