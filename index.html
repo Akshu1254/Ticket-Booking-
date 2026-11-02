@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicketBooker - Book Movie Tickets</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">🎟️ TicketBooker</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" id="myBookingsLink">My Bookings</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Apni favourite movie ki ticket book kar</h1>
+    <p>Seat chuno, pay karo (demo), ticket pao.</p>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Movie ka naam search kar...">
+      <select id="genreFilter">
+        <option value="all">Saare Genres</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2>Now Showing</h2>
+    <div id="movieList" class="movie-grid"></div>
+    <p id="noResult" class="hidden">Koi movie nahi mili 😕</p>
+  </main>
+
+  <!-- My Bookings popup -->
+  <div id="bookingsModal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <h2>My Bookings</h2>
+      <div id="bookingsList"></div>
+    </div>
+  </div>
+
+  <footer>Made with ❤️ by me | Demo project</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

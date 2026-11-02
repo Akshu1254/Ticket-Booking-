@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Seats - TicketBooker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">🎟️ TicketBooker</a>
+    <nav><a href="index.html">← Back to Movies</a></nav>
+  </header>
+
+  <main class="container" id="bookingMain">
+    <!-- Movie ki detail (JS bharega) -->
+    <div class="movie-header" id="movieHeader"></div>
+
+    <h3 class="section-title">1. Date chuno</h3>
+    <div class="chip-row" id="dateRow"></div>
+
+    <h3 class="section-title">2. Show time chuno</h3>
+    <div class="chip-row" id="timeRow"></div>
+
+    <h3 class="section-title">3. Seats chuno</h3>
+    <div class="screen">SCREEN</div>
+    <div class="seat-area">
+      <div class="seat-grid" id="seatGrid"></div>
+    </div>
+
+    <div class="legend">
+      <span><i class="l-av"></i> Available</span>
+      <span><i class="l-pr"></i> Premium</span>
+      <span><i class="l-sel"></i> Selected</span>
+      <span><i class="l-bk"></i> Booked</span>
+    </div>
+
+    <!-- Summary + user details -->
+    <div class="summary">
+      <div class="summary-line"><span>Selected seats</span><strong id="sumSeats">-</strong></div>
+      <div class="summary-line total"><span>Total</span><strong id="sumTotal">₹0</strong></div>
+
+      <div class="form-row">
+        <input type="text" id="custName" placeholder="Tera naam" maxlength="40">
+        <input type="tel" id="custPhone" placeholder="Phone number (10 digit)" maxlength="10">
+      </div>
+      <p class="error" id="errorMsg"></p>
+      <button class="btn" id="confirmBtn" disabled>Confirm Booking</button>
+    </div>
+  </main>
+
+  <footer>Made with ❤️ by me | Demo project - asli payment nahi hota</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
