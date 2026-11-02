@@ -18,6 +18,13 @@ if (!booking) {
     "<h1>Ticket not found. 😕</h1><p>The booking may have been cancelled or the link may be incorrect.</p>";
   document.getElementById("printBtn").classList.add("hidden");
 } else {
+  if (booking.paymentStatus === "Paid") {
+    document.getElementById("successBox").innerHTML =
+      "<h1>✅ Booking Confirmed</h1><p>Your Razorpay payment has been verified successfully.</p>";
+  } else {
+    document.getElementById("successBox").innerHTML =
+      "<h1>Booking not verified</h1><p>This ticket is not confirmed because payment has not been verified.</p>";
+  }
   const movie = movies.find(function (m) { return m.id === booking.movieId; });
   const gradient = movie ? movie.gradient : "#333";
   const emoji = movie ? movie.emoji : "🎬";
