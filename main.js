@@ -63,7 +63,7 @@ function renderBookings() {
   const bookings = getBookings().slice().reverse(); // latest pehle
 
   if (bookings.length === 0) {
-    bookingsList.innerHTML = '<p class="meta" style="margin-top:12px">Abhi tak koi booking nahi hai.</p>';
+    bookingsList.innerHTML = '<p class="meta" style="margin-top:12px">You have no bookings yet.</p>';
     return;
   }
 
@@ -103,7 +103,7 @@ modal.addEventListener("click", function (e) {
 bookingsList.addEventListener("click", function (e) {
   const id = e.target.getAttribute("data-cancel");
   if (!id) return;
-  if (!confirm("Pakka ye booking cancel karni hai?")) return;
+  if (!confirm("Are you sure you want to cancel this booking?")) return;
 
   const remaining = getBookings().filter(function (b) { return b.id !== id; });
   saveBookings(remaining);
