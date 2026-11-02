@@ -34,7 +34,7 @@ if (!booking) {
     "<div><small>Date</small><b>" + prettyDate(booking.date) + "</b></div>" +
     "<div><small>Time</small><b>" + booking.time + "</b></div>" +
     "<div><small>Seats</small><b>" + booking.seats.join(", ") + "</b></div>" +
-    "<div><small>Total Paid</small><b>₹" + booking.total + "</b></div>" +
+    "<div><small>Booking Total</small><b>₹" + booking.total + "</b></div>" +
     "<div><small>Name</small><b>" + escapeHTML(booking.name) + "</b></div>" +
     '<div><small>Payment Status</small><b>Not verified (demo)</b></div>' +
     "<div><small>Phone</small><b>" + escapeHTML(booking.phone) + "</b></div>" +
