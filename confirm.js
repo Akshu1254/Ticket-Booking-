@@ -36,9 +36,10 @@ if (!booking) {
     "<div><small>Seats</small><b>" + booking.seats.join(", ") + "</b></div>" +
     "<div><small>Booking Total</small><b>₹" + booking.total + "</b></div>" +
     "<div><small>Name</small><b>" + escapeHTML(booking.name) + "</b></div>" +
-    '<div><small>Payment Status</small><b>" + (booking.paymentStatus === "Paid" ? "Paid · Verified" : "Not paid / unverified") + "</b></div>' +
+    "<div><small>Payment Status</small><b>" + (booking.paymentStatus === "Paid" ? "Paid · Verified" : "Not paid / unverified") + "</b></div>" +
     "<div><small>Phone</small><b>" + escapeHTML(booking.phone) + "</b></div>" +
-    '<div><small>Payment ID</small><b>" + escapeHTML(booking.paymentId || "—") + "</b></div><div class="booking-id">' + booking.id + "</div>" +
+    "<div><small>Payment ID</small><b>" + escapeHTML(booking.paymentId || "—") + "</b></div>" +
+    '<div class="booking-id">' + booking.id + "</div>" +
     "</div></div>";
 }
 
