@@ -8,6 +8,7 @@
 const movieList = document.getElementById("movieList");
 const searchInput = document.getElementById("searchInput");
 const genreFilter = document.getElementById("genreFilter");
+const languageFilter = document.getElementById("languageFilter");
 const noResult = document.getElementById("noResult");
 
 // Genre dropdown movies ke data se khud bhar do
@@ -24,15 +25,17 @@ function fillGenres() {
   });
 }
 
-// Movie cards screen pe banao (search/filter ke hisaab se)
+// Render movie cards using the search, genre and language filters.
 function renderMovies() {
   const query = searchInput.value.trim().toLowerCase();
   const genre = genreFilter.value;
+  const language = languageFilter.value;
 
   const filtered = movies.filter(function (m) {
     const matchName = m.title.toLowerCase().includes(query);
     const matchGenre = genre === "all" || m.genre === genre;
-    return matchName && matchGenre;
+    const matchLanguage = language === "all" || m.language === language;
+    return matchName && matchGenre && matchLanguage;
   });
 
   movieList.innerHTML = filtered
@@ -113,6 +116,7 @@ bookingsList.addEventListener("click", function (e) {
 /* ---------------- Start ---------------- */
 searchInput.addEventListener("input", renderMovies);
 genreFilter.addEventListener("change", renderMovies);
+languageFilter.addEventListener("change", renderMovies);
 
 fillGenres();
 renderMovies();
