@@ -4,35 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111318">
-  <title>Checkout - TicketBooker</title>
+  <title>Secure Checkout - TicketBooker</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body class="payment-page">
   <header class="navbar payment-navbar">
     <a href="index.html" class="logo"><span class="logo-mark">T</span> TicketBooker</a>
-    <nav><a href="index.html">Home</a><a href="index.html#movies">Movies</a></nav>
+    <nav><a href="index.html">Home</a><a href="index.html#now-showing">Movies</a></nav>
   </header>
-
   <main class="payment-main">
     <div class="payment-heading">
-      <span class="eyebrow">SECURE CHECKOUT EXPERIENCE</span>
+      <span class="eyebrow">POWERED BY RAZORPAY</span>
       <h1>Complete your booking</h1>
-      <p>Review your order and scan the QR code using any supported UPI app.</p>
+      <p>Review your order and continue to the secure payment window.</p>
     </div>
-
     <div id="checkoutError" class="checkout-error hidden">
-      <div class="error-icon">!</div>
-      <h2>Booking details not found</h2>
+      <div class="error-icon">!</div><h2>Booking details not found</h2>
       <p>Your booking session may have expired. Please select your movie and seats again.</p>
       <a class="btn" href="index.html">Browse Movies</a>
     </div>
-
     <div id="checkoutContent" class="checkout-layout payment-layout hidden">
       <section class="checkout-card order-card">
-        <div class="card-heading">
-          <div><span class="eyebrow">YOUR ORDER</span><h2 id="movieTitle">Movie title</h2></div>
-          <span class="order-tag">MOVIE TICKET</span>
-        </div>
+        <div class="card-heading"><div><span class="eyebrow">YOUR ORDER</span><h2 id="movieTitle">Movie title</h2></div><span class="order-tag">MOVIE TICKET</span></div>
         <div class="checkout-row"><span>Show date</span><strong id="showDate"></strong></div>
         <div class="checkout-row"><span>Show time</span><strong id="showTime"></strong></div>
         <div class="checkout-row"><span>Selected seats</span><strong id="showSeats"></strong></div>
@@ -41,23 +35,21 @@
         <div class="checkout-total"><span>Total amount</span><strong id="totalAmount"></strong></div>
         <a class="btn btn-outline back-link" id="backToSeats" href="index.html">← Change seats</a>
       </section>
-
-      <section class="payment-card">
-        <div class="payment-card-top"><span class="eyebrow">UPI QR CHECKOUT</span><span class="secure-label">● UPI PAYMENT</span></div>
-        <h2>Scan &amp; pay</h2>
-        <p class="payment-subtitle">Use your UPI app to scan this code</p>
+      <section class="payment-card razorpay-card">
+        <div class="payment-card-top"><span class="eyebrow">SECURE ONLINE PAYMENT</span><span class="secure-label">● RAZORPAY CHECKOUT</span></div>
+        <div class="gateway-icon">₹</div>
+        <h2>Pay securely</h2>
+        <p class="payment-subtitle">UPI · Cards · Netbanking · Wallets (methods depend on your Razorpay account)</p>
         <div class="payment-amount"><small>AMOUNT TO PAY</small><strong id="paymentTotal">₹0</strong></div>
-        <div class="qr-frame"><img src="payment-qr.svg" alt="UPI payment QR code" width="600" height="572"></div>
-        <div class="upi-apps"><span>Google Pay</span><span>PhonePe</span><span>Paytm</span><span>BHIM</span></div>
-        <p class="qr-help">Open your UPI app, scan the QR and verify the recipient name and amount before paying.</p>
-        <div class="payment-note"><strong>Demo payment notice</strong><p>This website cannot verify UPI transfers automatically. Continuing will create a demo ticket only. It does not confirm that payment was received. Do not use this page as a real payment receipt.</p></div>
-        <button class="btn demo-ticket-btn" id="finishDemo" type="button">Continue to Demo Ticket <span>→</span></button>
-        <p id="paymentMessage" class="error" aria-live="polite"></p>
+        <ul class="gateway-benefits"><li>Secure Razorpay hosted checkout</li><li>Payment status verified by the server</li><li>Ticket is created only after verification</li></ul>
+        <button class="btn demo-ticket-btn" id="payNow" type="button">Pay securely <span>→</span></button>
+        <p id="paymentMessage" class="payment-message" role="status" aria-live="polite"></p>
+        <p class="gateway-footnote">This is a test integration until you add your Razorpay test API keys and deploy the backend. Never share your Key Secret.</p>
       </section>
     </div>
   </main>
-
-  <footer><strong>TicketBooker</strong><span>Demo checkout · No automatic payment verification</span></footer>
+  <footer><strong>TicketBooker</strong><span>Secure checkout integration · Razorpay</span></footer>
+  <script>window.TICKETBOOKER_API_BASE = "https://YOUR-RENDER-SERVICE.onrender.com";</script>
   <script src="data.js"></script>
   <script src="payment.js"></script>
 </body>
