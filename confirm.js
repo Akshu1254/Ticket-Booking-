@@ -15,7 +15,7 @@ const ticketWrap = document.getElementById("ticketWrap");
 
 if (!booking) {
   document.getElementById("successBox").innerHTML =
-    "<h1>Ticket nahi mila 😕</h1><p>Shayad booking cancel ho gayi ya link galat hai.</p>";
+    "<h1>Ticket not found. 😕</h1><p>The booking may have been cancelled or the link may be incorrect.</p>";
   document.getElementById("printBtn").classList.add("hidden");
 } else {
   const movie = movies.find(function (m) { return m.id === booking.movieId; });
