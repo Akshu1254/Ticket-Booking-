@@ -154,6 +154,85 @@ const movies = [
     gradient: "linear-gradient(135deg, #14532d, #854d0e)",
     timings: ["10:00 AM", "01:00 PM", "04:30 PM", "08:00 PM"],
     description: "A dinosaur theme park turns into a fight for survival when a genetically modified dinosaur escapes."
+  },
+
+  {
+    id: 12,
+    title: "Pathaan",
+    genre: "Action",
+    language: "Hindi",
+    duration: "2h 26m",
+    rating: 5.8,
+    price: 250,
+    emoji: "🕶️",
+    gradient: "linear-gradient(135deg, #1e3a8a, #b91c1c)",
+    timings: ["10:15 AM", "01:45 PM", "05:15 PM", "08:45 PM"],
+    description: "An exiled agent returns to stop a dangerous threat against the country."
+  },
+  {
+    id: 13,
+    title: "Drishyam 2",
+    genre: "Thriller",
+    language: "Hindi",
+    duration: "2h 20m",
+    rating: 8.2,
+    price: 230,
+    emoji: "🧩",
+    gradient: "linear-gradient(135deg, #334155, #166534)",
+    timings: ["10:00 AM", "01:30 PM", "06:00 PM", "09:30 PM"],
+    description: "A family faces a new investigation as a hidden truth threatens to surface."
+  },
+  {
+    id: 14,
+    title: "Shadaa",
+    genre: "Romance Comedy",
+    language: "Punjabi",
+    duration: "2h 8m",
+    rating: 6.5,
+    price: 200,
+    emoji: "💐",
+    gradient: "linear-gradient(135deg, #be185d, #f59e0b)",
+    timings: ["10:30 AM", "01:30 PM", "05:00 PM", "08:30 PM"],
+    description: "A bachelor faces family pressure and unexpected complications while looking for love."
+  },
+  {
+    id: 15,
+    title: "Saunkan Saunkanay",
+    genre: "Comedy",
+    language: "Punjabi",
+    duration: "2h 10m",
+    rating: 6.5,
+    price: 210,
+    emoji: "🤣",
+    gradient: "linear-gradient(135deg, #c2410c, #7e22ce)",
+    timings: ["09:45 AM", "12:45 PM", "04:15 PM", "07:45 PM"],
+    description: "A lively Punjabi comedy about a family relationship that turns into comic chaos."
+  },
+  {
+    id: 16,
+    title: "The Dark Knight",
+    genre: "Action",
+    language: "English",
+    duration: "2h 32m",
+    rating: 9.0,
+    price: 300,
+    emoji: "🦇",
+    gradient: "linear-gradient(135deg, #111827, #374151)",
+    timings: ["10:00 AM", "01:30 PM", "06:00 PM", "09:30 PM"],
+    description: "Batman faces the Joker, a criminal mastermind who pushes Gotham into chaos."
+  },
+  {
+    id: 17,
+    title: "Avatar: The Way of Water",
+    genre: "Adventure",
+    language: "English",
+    duration: "3h 12m",
+    rating: 7.5,
+    price: 320,
+    emoji: "🌊",
+    gradient: "linear-gradient(135deg, #0369a1, #0f766e)",
+    timings: ["09:30 AM", "01:15 PM", "05:30 PM", "09:15 PM"],
+    description: "Jake Sully and his family seek refuge with the ocean clan of Pandora."
   }
 ];
 
