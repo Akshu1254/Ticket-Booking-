@@ -210,12 +210,9 @@ confirmBtn.addEventListener("click", function () {
     bookedAt: new Date().toISOString()
   };
 
-  const all = getBookings();
-  all.push(booking);
-  saveBookings(all);
-
-  // Ticket page pe bhejo
-  window.location.href = "confirm.html?id=" + booking.id;
+  // Keep the booking as pending until the checkout demo is completed.
+  localStorage.setItem("pendingBooking", JSON.stringify(booking));
+  window.location.href = "payment.html";
 });
 
 /* ---------------- Start ---------------- */
