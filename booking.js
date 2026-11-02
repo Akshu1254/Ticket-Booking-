@@ -93,7 +93,7 @@ function renderSeats() {
   seatGrid.innerHTML = "";
 
   if (!selectedDate || !selectedTime) {
-    seatGrid.innerHTML = '<p class="seat-msg">Pehle date aur show time chuno 👆</p>';
+    seatGrid.innerHTML = '<p class="seat-msg">Please select a date and show time first. 👆</p>';
     updateSummary();
     return;
   }
@@ -147,7 +147,7 @@ function toggleSeat(seatId, element) {
   const index = selectedSeats.indexOf(seatId);
   if (index === -1) {
     if (selectedSeats.length >= 8) {
-      showError("Ek baar mein max 8 seats hi book ho sakti hain.");
+      showError("You can book a maximum of 8 seats at a time.");
       return;
     }
     selectedSeats.push(seatId);
@@ -182,8 +182,8 @@ confirmBtn.addEventListener("click", function () {
   const name = document.getElementById("custName").value.trim();
   const phone = document.getElementById("custPhone").value.trim();
 
-  if (name.length < 2) return showError("Apna naam daal (kam se kam 2 letters).");
-  if (!/^[0-9]{10}$/.test(phone)) return showError("Phone number 10 digit ka hona chahiye.");
+  if (name.length < 2) return showError("Please enter your name (at least 2 characters).");
+  if (!/^[0-9]{10}$/.test(phone)) return showError("Please enter a valid 10-digit phone number.");
 
   // Last check: kisi aur tab mein seat book to nahi ho gayi?
   const bookedNow = getBookedSeats(movie.id, selectedDate, selectedTime);
@@ -191,7 +191,7 @@ confirmBtn.addEventListener("click", function () {
   if (clash.length) {
     selectedSeats = [];
     renderSeats();
-    return showError("Seats " + clash.join(", ") + " abhi book ho chuki hain. Dobara chuno.");
+    return showError("Seats " + clash.join(", ") + " have just been booked. Please choose different seats.");
   }
 
   let total = 0;
@@ -221,7 +221,7 @@ confirmBtn.addEventListener("click", function () {
 /* ---------------- Start ---------------- */
 if (!movie) {
   document.getElementById("bookingMain").innerHTML =
-    '<p class="seat-msg">Movie nahi mili 😕 <a href="index.html" style="color:var(--accent)">Home pe wapas ja</a></p>';
+    '<p class="seat-msg">Movie not found. 😕 <a href="index.html" style="color:var(--accent)">Return to Home</a></p>';
 } else {
   document.title = "Book " + movie.title + " - TicketBooker";
   renderHeader();
