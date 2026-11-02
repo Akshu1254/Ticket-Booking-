@@ -456,3 +456,42 @@ footer strong{color:#ff7188}
 .payment-message{min-height:24px;margin-top:12px;font-size:12px;color:#d1d5de;line-height:1.5}
 .payment-message.is-error{color:#ff929d}.payment-message.is-success{color:#58d9a4}
 .gateway-footnote{max-width:350px;margin-top:16px;color:#9298a6;font-size:10px;line-height:1.6}
+
+/* UPI payment checkout */
+.payment-page{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(ellipse at 50% -15%,#30202b 0%,#15171d 48%,#101116 100%)}
+.payment-navbar{width:100%;min-height:66px;padding:12px max(5%,calc((100% - 1120px)/2))}
+.payment-navbar nav{display:flex;gap:22px}
+.payment-main{width:min(1080px,calc(100% - 48px));margin:0 auto;padding:42px 0 55px;flex:1}
+.payment-heading{text-align:center;margin:0 auto 30px;max-width:680px}
+.payment-heading h1{font-size:clamp(28px,4vw,40px);margin:10px 0}
+.payment-heading p{color:var(--muted);font-size:14px}
+.payment-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.9fr);gap:24px;align-items:start;max-width:930px;margin:0 auto}
+.payment-page .checkout-card,.payment-page .payment-card{padding:26px;background:linear-gradient(145deg,#20232c,#191c24);border:1px solid #353a47;border-radius:16px;box-shadow:0 18px 50px #0003}
+.payment-page .order-card{text-align:left}
+.card-heading{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px}
+.card-heading h2{font-size:23px;margin:7px 0}
+.order-tag{font-size:9px;letter-spacing:1px;padding:7px 9px;border-radius:30px;background:#303541;white-space:nowrap}
+.payment-page .checkout-row{padding:14px 0;font-size:13px}
+.payment-page .checkout-row strong{max-width:60%;overflow-wrap:anywhere}
+.checkout-total{display:flex;justify-content:space-between;align-items:center;padding:18px 0 5px;color:#c2c5ce}
+.checkout-total strong{font-size:25px;color:#fff}
+.back-link{margin-top:24px}
+.upi-payment-card{text-align:center}
+.upi-payment-card h2{font-size:25px;margin:12px 0}
+.payment-amount{margin:16px 0;padding:13px;border-radius:11px;background:#14171e;border:1px solid #303541}
+.payment-amount small{display:block;color:#aeb3bf;font-size:9px;font-weight:800;letter-spacing:1.6px}
+.payment-amount strong{font-size:32px}
+.qr-frame{width:min(100%,310px);margin:0 auto;padding:12px;background:#fff;border-radius:14px}
+.qr-frame img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.qr-help{max-width:340px;margin:13px auto;color:#b9bdc7;font-size:11px;line-height:1.6}
+.upi-recipient{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0;padding:12px;background:#14171e;border:1px solid #303541;border-radius:10px}
+.upi-recipient small{color:#aeb3bf;font-size:10px;letter-spacing:1px}
+.upi-recipient strong{font-size:13px}
+.copy-upi{border:1px solid #596071;background:#292e39;color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer}
+.upi-open-btn{display:flex;justify-content:center;gap:10px;width:100%;padding:13px}
+.payment-page .payment-note{margin:16px 0;padding:13px;border-radius:10px;text-align:left;background:#30291f;border:1px solid #665033;color:#f3d9aa;font-size:11px;line-height:1.55}
+.payment-message{min-height:22px;margin:10px 0;color:#d1d5de;font-size:12px;line-height:1.5}
+.payment-message.is-error{color:#ff929d}.payment-message.is-success{color:#58d9a4}
+.upi-help-link{font-size:12px;color:#ff8396}
+@media(max-width:760px){.payment-main{width:min(100% - 30px,560px);padding:30px 0 42px}.payment-layout{grid-template-columns:1fr;max-width:520px;gap:16px}.payment-page .checkout-card,.payment-page .payment-card{padding:21px}.payment-navbar{padding:12px 5%}}
+@media(max-width:420px){.payment-navbar nav{gap:12px}.payment-page .card-heading h2{font-size:20px}}
